@@ -36,7 +36,7 @@ int parse(char *g)
                 i++;
                 if (*(g+i) == x || *(g+i) == y || *(g+i) == z) {
                     i++;
-                    return 1;
+                    return atomic(g+i);
                 } else {
                     return 0;
                 }
