@@ -19,4 +19,6 @@ ampleSwarms g = calcSwarm [] [] getVertices g [] g
 calcSwarm r x all@(p:ps) s g
     | null[all] == True && null[x] == True = s ++ r
     | otherwise = calcSwarm r ++ p _ ps s g
+                -- add v to X
+                -- remove v from P 
 
