@@ -1,0 +1,26 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/Documents/Programming/Java" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/Documents/Programming/Java" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Documents/Programming/Java">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-143.1821" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1455550092971" />
+              <option name="buildTimestamp" value="1453161600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/Documents/Programming" />
+  </component>
+</application>
