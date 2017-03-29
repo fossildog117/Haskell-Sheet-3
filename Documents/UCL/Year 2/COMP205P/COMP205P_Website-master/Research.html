@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Research</h1>
+                    </header>
+                </div>
+            </section>
+
+            <section id="decisions">
+                <h2>Decisions</h2>
+                <p>
+                    Since on different aspects, we will have several technologies to use, so we have some discussios on
+                    them.
+                    And below are the conclusions we made on different part of the project, with advantages and
+                    disadvantages.
+                </p>
+                <p>Programming Language:</p><br>
+                <h3 align="center">C# vs F#</h3>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td align="center"><h4>C#</h4></td>
+                        <td align="center"><h4>F#</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Plenty of libraries available to use</td>
+                        <td align="center">Some libraries not comfortable for F#</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Simple to program</td>
+                        <td align="center">Good for complex algorithm programming</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Faster when executing</td>
+                        <td align="center">Shorter code</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Easier for object-oriented programming</td>
+                        <td align="center">F# projects work in C# projects</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p>Set Storage:</p><br>
+                <h3 align="center">Azure Cloud Blob vs Database on VM Server</h3>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td align="center"><h4>Azure Cloud Blob</h4></td>
+                        <td align="center"><h4>Database on VM Server</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Good for storing large strings</td>
+                        <td align="center">Faster than reading data from <br>
+                            cloud based storage system<br>
+                            (from speed tests)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">File structure<br>
+                            simple to navigate
+                        </td>
+                        <td align="center">Hard to scale and add new tables</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Data is backed up automatically by Microsoft</td>
+                        <td align="center">We have to handle backing up ourselves<br>
+                            as the database will be on the local machine
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p>Splitting Sets Into Subsets:</p>
+                <h3 align="center">Decision Tree vs NeuralNetwork Model(ANN)</h3>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td align="center"><h4>Decision Tree</h4></td>
+                        <td align="center"><h4>ANN</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Easy to visualise underlying concepts and mechanisms</td>
+                        <td align="center">Many parameters to test(e.g. hidden layer size,<br>
+                            number of hidden layers, different activation functions)<br>
+                            more prone to overfitting<br></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Quick to implement</td>
+                        <td align="center">Require large data set</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Works well with simple problems</td>
+                        <td align="center">Works well with complex problems</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Easy to learn</td>
+                        <td align="center">Difficult to debug</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p>Data Transmission:</p>
+                <h3 align="center">ZIP vs JSON Formatted String vs UDP</h3>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td align="center"><h4>ZIP</h4></td>
+                        <td align="center"><h4>JSON Formatted String</h4></td>
+                        <td align="center"><h4>UDP</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Saves space</td>
+                        <td align="center">Syntax is small and light weighted</td>
+                        <td align="center">Do no need any connection setup</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Reduce transmission time</td>
+                        <td align="center">Execute responses faster</td>
+                        <td align="center">Do not need to retransmit lost packets</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">Wide range of supported browser<br>
+                            compatibility with operation systems
+                        </td>
+                        <td align="center"></td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">Superior file format for web APIs</td>
+                        <td align="center"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p>In Memory Set Manipulation:</p>
+                <h3 align="center">C# Hashset vs Dictionary</h3>
+                <table>
+                    <tr>
+                        <td align="center"><h4>C# Hashset</h4></td>
+                        <td align="center"><h4>Dictionary</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Supports multiple readers whereas Dictionary<br>
+                            only supports a single reader at any one time
+                        </td>
+                        <td align="center">Slight performance gain on boxing and unboxing</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Relies on rehashing to resolve collisions<br>
+                            becomes slower as dataset increases
+                        </td>
+                        <td align="center">Relies on chaining to resolve collisions.<br>
+                            Resizing the hash table is not required as all<br>
+                            hash collisions are resolved by appending the new<br>
+                            item to the end of the linked list of the hash index.<br>
+                            Meaning Dictionaries are much faster for large sets.<br>
+                            No boxing and unboxing further speed improvements.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">Generic type so can be used with any type</td>
+                    </tr>
+                </table>
+
+                <p>Efficiency:</p>
+                <h3 align="center">Multi-Threading vs Single-Threading</h3>
+                <table>
+                    <tr>
+                        <td align="center"><h4>Multi-Threading</h4></td>
+                        <td align="center"><h4>Single-Threading</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Improved performance and concurrency</td>
+                        <td align="center">Easy to debug and test</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Better use of CPU resources</td>
+                        <td align="center">Easy to code</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Simplified and streamlined program coding</td>
+                        <td align="center"></td>
+                    </tr>
+                </table>
+
+                <p>Chart Generation:</p>
+                <h3 align="center">Front End vs Back End</h3>
+                <table>
+                    <tr>
+                        <td align="center"><h4>Front End</h4></td>
+                        <td align="center"><h4>Back End</h4></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Greater flexibility and variety with sets.</td>
+                        <td align="center">C# is faster than Javascript so the graphs<br>
+                            can be generated in a shorter amount of time
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">Massive amounts of customisation</td>
+                        <td align="center">Sending a Chart Object as a JSON is significantly<br>
+                            faster than sending sets containing potentially<br>
+                            millions of data points across a TCP connection.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">Allows back end developers to better understand<br>
+                            requirements of the front end developers thereby<br>
+                            improving communication.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">More flexibility for front end developers as<br>
+                            they have the option to retrieve a dataset<br>
+                            or a graph object.
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Summary</h3>
+                <p>In summary, we used C# as programming language since this project is object-oriented, and also we are
+                    more familiar with C# than F#,
+                    so it is easier and more comfortable for us to use C#.</p>
+                <p>For data storage, we used Azure Blob storage because it's much faster to read data and cleaner to
+                    browse,
+                    and we don't need to worry about the loss of data since it's automatically backed up by
+                    Microsoft.</p>
+                <p>In modelling section, we used Decision Tree. It's not a really huge task of set classification, so
+                    using Decision Tree
+                    is simpler and easier for us to use.</p>
+                <p>For data transmission, we have JSON Formatted String for first choice because it's much simpler and
+                    faster when transmitting data.
+                    We also have the options for ZIP transfer.</p>
+                <p>We decided to include the Chart Engine option in the backend because Team 1 were performing the exact
+                    same tasks as the Chart Engine. It is much simpler to send a Chart object across a REST endpoint
+                    than sets since sets can vary in size of up to several MB whereas Chart objects will be no more than
+                    a few KB. </p>
+
+            </section>
+
+            <section id="source">
+                <h2>Sources</h2>
+                <p>
+                <table>
+                    <thead>
+                    <tr class="success">
+                        <th>Content</th>
+                        <th>Resource</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Visual Studio Team Service</td>
+                        <td>https://www.visualstudio.com/team-services/</td>
+                    </tr>
+                    <tr>
+                        <td>Azure Service</td>
+                        <td>https://azure.microsoft.com/</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft Visual Studio</td>
+                        <td>https://www.visualstudio.com/</td>
+                    </tr>
+                    <tr>
+                        <td>Website Sample</td>
+                        <td>https://startbootstrap.com/</td>
+                    </tr>
+                    <tr>
+                        <td>Capita</td>
+                        <td>http://www.capita-sims.co.uk/</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </p>
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <span class="opener">Background</span>
+                        <ul>
+                            <li><a href="Background.html#clients">Clients</a></li>
+                            <li><a href="Background.html#project">Project</a></li>
+                            <li><a href="Background.html#problem">Problem</a></li>
+                            <!--<li><hr></li>-->
+                            <!--<li><a href="project.html#log">Experiment Log</a></li>-->
+                            <!--<li><a href="project.html#biweekly_reports">Biweekly reports</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Requirement</span>
+                        <ul>
+                            <li><a href="Requirement.html#gather">Gathering Requirements</a></li>
+                            <li><a href="Requirement.html#initial">Initial Requirements</a></li>
+                            <li><a href="Requirement.html#final">Final Requirements</a></li>
+                            <li><a href="Requirement.html#moscow">MoSCoW List</a></li>
+                            <li><a href="Requirement.html#persona">Persona</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Research</span>
+                        <ul>
+                            <li><a href="Research.html#decisions">Decisions</a></li>
+                            <li><a href="Research.html#source">Sources</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Design</span>
+                        <ul>
+                            <li><a href="Design.html#class">Class Diagram</a></li>
+                            <li><a href="Design.html#pattern">Design Pattern</a></li>
+                            <li><a href="Design.html#tool">Development Tools</a></li>
+                            <li><a href="Design.html#implementation">Implementation</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Testing</span>
+                        <ul>
+                            <li><a href="Testing.html#unit&integration">Unit&Integration Testing</a></li>
+                            <li><a href="Testing.html#user">User Testing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Evaluation</span>
+                        <ul>
+                            <li><a href="Evaluation.html#summary">Summary</a></li>
+                            <li><a href="Evaluation.html#evaluation">Evaluation</a></li>
+                            <li><a href="Evaluation.html#future">Future Work</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Management</span>
+                        <ul>
+                            <li><a href="Management.html#user">User Manual</a></li>
+                            <li><a href="Management.html#system">System Manual</a></li>
+                            <li><a href="Management.html#feedback">Feedback</a></li>
+                            <li><a href="Management.html#gantt">Gantt Chart</a></li>
+                            <li><a href="Management.html#reports">Bi-weekly Reports</a></li>
+                            <li><a href="Management.html#meeting">Meeting Minutes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Source Code</span>
+                        <ul>
+                            <li><a href="https://github.com/fossildog117/silicon">Backend Technology</a></li>
+                            <li><a href="https://github.com/Lambrosz/COMP205P-Main">REST API</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

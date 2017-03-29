@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Requirements</h1>
+                    </header>
+                </div>
+            </section>
+
+            <section id="gather">
+                <h2>Gathering Requirements</h2>
+                <p>
+                    Towards the end of first term we received a
+
+                    <a href="files/description.pdf">project description</a>
+
+                    from our clients. It was really difficult to communicate with our clients to determine the sets of
+                    requirements as they were not very reponsive.
+                    From what we gathered from Team 1, the client required a backend that transferred the data to the
+                    frontend efficiently.<br>
+                    <br>
+                    We managed, with the assistance from Dr. Strange, to arrange a meeting with a developer from SIMS on
+                    12 January along with Team 1. During this meeting
+                    the developer taught us about the set system. He described to us that their system currently
+                    generates a database of sets and uses a chart engine to generate charts from the database of sets.
+                    The system does not need to know what the database looks like in order to generate sets.
+
+
+                </p>
+            </section>
+
+            <section id="initial">
+                <h2>Initial Requirements</h2>
+                <p>
+                    Functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">Create a storage system to store sets</li>
+                    <li type="circle">A program to generate sets without knowing the structure of the database</li>
+                    <li type="circle">A program to write data a to storage system in a structured format</li>
+                    <li type="circle">Create sets based on the data in a database</li>
+                    <li type="circle">A program to read data from the storage system that can be used in many different
+                        programs
+                    </li>
+                    <li type="circle">A systematic method of retrieving sets from the storage system</li>
+                    <li type="circle">An efficient way to send data to Team 1</li>
+                </ol>
+                <p>
+                    Non-functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">Support for multiple databases</li>
+                    <li type="circle">A fast method to transfer data</li>
+                    <li type="circle">Protect personal data in the database</li>
+                </ol>
+                <br>
+                <p>
+                    Based on the lists of requirements above we designed the following system to meet the client's
+                    requirements
+                </p>
+                <ol>
+                    <li type="number">
+                        REST API:
+                        <br>
+                        <br>
+                        <p>We decided to use the REST API to send data to Team 1 because of its robustness and relative
+                            easy learning curve. In addition Visual Studio also has many skeleton projects and general
+                            purpose support for backend REST services.</p>
+                    </li>
+                    <li type="number">
+                        Interpretation Engine
+                        <br>
+                        <br>
+                        <p>The interpretation engine is a system that interprets GET requests
+                            sent from Team 1 by mapping the requests to a set in the set database.
+                            It reads from the set database and returns the set to the REST controller.</p>
+                    </li>
+                    <li type="number">
+                        Set Engine
+                        <br>
+                        <br>
+                        <p>The set engine includes a database connector which connects to multiple databases,
+                            a set creation to create sets based on the data gathered from the databases,
+                            and a BlobPusher to store created sets into the Blob storage.</p>
+                    </li>
+
+                </ol>
+
+                <p>
+                    <img src="images/initial.png" width="700" height="500" align="middle"><br>
+                    Figure 1: Schematic diagram to show the overview of our proposed system
+
+                </p>
+
+            </section>
+
+            <section id="final">
+                <h2>Final Requirements</h2>
+                <p>Based on feedback from Team 1 and SIMS we added several extra requirements</p>
+
+                <p>
+                    Additional Functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">A Chart Engine to generate charts</li>
+                    <li type="circle">The Set Engine to generate a map of the storage system</li>
+                </ol>
+
+                <p>
+                    Additional Non-functional Requirements:
+                </p>
+
+                <ol>
+                    <li type="circle">Splitting of sets into further subsets</li>
+                    <li type="circle">ZIP/UDP methods of transmitting data</li>
+                    <li type="circle">Set Engine to be able to read from multiple databases</li>
+                    <li type="circle">Provide a documentation introducing how to use the API</li>
+                </ol>
+
+                <br>
+
+                <p>We decided to integrate the Interpretation Engine with the REST service because we were over
+                    complicating the process of retrieving sets. By creating a map of the set storage we can retrieve
+                    any set using a 1 to 1 mapping which is much simpler no parsing is required.<br><br> We decided to
+                    include a Chart Engine in our system because Team 1 are generating charts in Javascript once they
+                    receive the sets from the REST endpoint. This can be exceptionally slow as Javascript is much slower
+                    than C# and sending a simple Chart object in JSON takes much less time than sending sets that
+                    contain potentially millions of data points.</p>
+
+                <p>
+                    Based on the final requirements, we updated the diagram
+                </p>
+                <img src="images/final.png" width="800" height="550" align="middle">
+                <br>
+                <p>
+                    Figure 2: Schematic diagram to show the overview of the final system
+                </p>
+            </section>
+
+
+            <!--<p>-->
+            <!--Non-functional Requirements:-->
+            <!--</p>-->
+            <!--<ol>-->
+            <!--<li type="circle">Support for multiple databases</li>-->
+            <!--<li type="circle">A fast method to transfer data</li>-->
+            <!--<li type="circle">Protect personal data in the database</li>-->
+            <!--</ol>-->
+
+            <section id="moscow">
+                <h2>MoSCoW List</h2>
+                <p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Must Have</td>
+                        <td>1. A database for storing sets<br>
+                            2. The Set Engine must be able to generate sets without knowing the structure of a database.<br>
+                            3. The Set Engine must be able to push sets to the set database in a structured format.<br>
+                            4. The Set Engine must be able to split sets into further subsets.<br>
+                            5. The REST Service must allow Team 1 to retrieve information for each set.<br>
+                            6. The REST Controllers must be able to retrieve any set in the set database.<br>
+                            7. A Chart Engine to generate charts in C#.<br>
+                            8. Libraries to read and write from the chosen storage system for the database.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Should Have</td>
+                        <td>1. Create a prototype which connects to Team 1's front end to perform basic operations.<br>
+                            2. Experiment with UDP as a method of data transfer.<br>
+                            3. Experiment with ZIP as a method of data transfer.<br>
+                            4. Experiment with any other methods to transport data to Team 1 effectively.<br>
+                            5. Experiment with different methods to generate charts as fast as possible.<br>
+                            6. The REST Service to support retrieval of ZIP files.<br>
+                            7. The REST Service to support retrieval of Graph objects in JSON.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Could Have</td>
+                        <td>1. Set Engine support for multiple databases.<br>
+                            2. Set Engine to generate a map of the storage system.<br>
+                            3. Set Engine to generate size tags for sets<br>
+                            4. A tool to generate sample databases.<br>
+                            5. Provide a documentation introducing how to use the API.<br>
+                            6. Unit testing.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Won't Have</td>
+                        <td>1. The project must not be developed using .NET 4.0 or below.<br>
+                            2. The project must not use technology that is depreciated.<br>
+                            3. The project must not use only one method of approach. It is an experimental project and
+                            so a variety of approaches should be used.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </p>
+            </section>
+
+
+            <section id="persona">
+                <h2>Persona</h2>
+                <p>After working closely with Team 1 we considered the various parties whom would be interested to use
+                    the API. From the meetings with Team 1 and SIMS we have created personas of people who would
+                    show interest in the API.</p>
+                <p>Persona 1</p>
+                <img src="images/p1.png" width="800" height="550">
+                <p></p>
+                <p>Persona 2</p>
+                <img src="images/p2.png" width="800" height="550">
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <span class="opener">Background</span>
+                        <ul>
+                            <li><a href="Background.html#clients">Clients</a></li>
+                            <li><a href="Background.html#project">Project</a></li>
+                            <li><a href="Background.html#problem">Problem</a></li>
+                            <!--<li><hr></li>-->
+                            <!--<li><a href="project.html#log">Experiment Log</a></li>-->
+                            <!--<li><a href="project.html#biweekly_reports">Biweekly reports</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Requirement</span>
+                        <ul>
+                            <li><a href="Requirement.html#gather">Gathering Requirements</a></li>
+                            <li><a href="Requirement.html#initial">Initial Requirements</a></li>
+                            <li><a href="Requirement.html#final">Final Requirements</a></li>
+                            <li><a href="Requirement.html#moscow">MoSCoW List</a></li>
+                            <li><a href="Requirement.html#persona">Persona</a></li>
+                            <!--<li><a href="Requirement.html#user">User Case</a> </li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Research</span>
+                        <ul>
+                            <li><a href="Research.html#decisions">Decisions</a></li>
+                            <li><a href="Research.html#source">Sources</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Design</span>
+                        <ul>
+                            <li><a href="Design.html#class">Class Diagram</a></li>
+                            <li><a href="Design.html#pattern">Design Pattern</a></li>
+                            <li><a href="Design.html#tool">Development Tools</a></li>
+                            <li><a href="Design.html#implementation">Implementation</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Testing</span>
+                        <ul>
+                            <li><a href="Testing.html#unit&integration">Unit&Integration Testing</a></li>
+                            <li><a href="Testing.html#user">User Testing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Evaluation</span>
+                        <ul>
+                            <li><a href="Evaluation.html#summary">Summary</a></li>
+                            <li><a href="Evaluation.html#evaluation">Evaluation</a></li>
+                            <li><a href="Evaluation.html#future">Future Work</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Management</span>
+                        <ul>
+                            <li><a href="Management.html#user">User Manual</a></li>
+                            <li><a href="Management.html#system">System Manual</a></li>
+                            <li><a href="Management.html#feedback">Feedback</a></li>
+                            <li><a href="Management.html#gantt">Gantt Chart</a></li>
+                            <li><a href="Management.html#reports">Bi-weekly Reports</a></li>
+                            <li><a href="Management.html#meeting">Meeting Minutes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Source Code</span>
+                        <ul>
+                            <li><a href="https://github.com/fossildog117/silicon">Backend Technology</a></li>
+                            <li><a href="https://github.com/Lambrosz/COMP205P-Main">REST API</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
